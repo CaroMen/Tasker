@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "538273007920",
+    "firebase_url": "https://tracker-30199.firebaseio.com",
+    "project_id": "tracker-30199",
+    "storage_bucket": "tracker-30199.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:538273007920:android:6bb63c2236ef8b958f60f5",
+        "android_client_info": {
+          "package_name": "com.example.tasker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "538273007920-sk3rkrmr3khu1ofmtpdikbqaljv2v3je.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCF5PCoVBEvZSdVkU88Qiv2YAA9rB60ENk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "538273007920-sk3rkrmr3khu1ofmtpdikbqaljv2v3je.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
