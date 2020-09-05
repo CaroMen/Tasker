@@ -22,6 +22,7 @@ class AuthService {
           'email': email,
           'profileImgUrl': '',
         });
+        // Navigator.pop(context);
         Navigator.pushReplacementNamed(context, DashboardScreen.id);
       }
     } catch (e) {
@@ -29,12 +30,16 @@ class AuthService {
     }
   }
 
-  static void logout(BuildContext context) {
+  static void logout() {
     _auth.signOut();
-    Navigator.pushReplacementNamed(context, LoginScreen.id);
+    // Navigator.pushReplacementNamed(context, LoginScreen.id);
   }
 
   static void login(String email, String password) async {
-    _auth.signInWithEmailAndPassword(email: email, password: password);
+    try {
+      await _auth.signInWithEmailAndPassword(email: email, password: password);
+    } catch (e) {
+      print(e);
+    }
   }
 }
