@@ -49,7 +49,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
               child: Column(
                 children: [
                   SizedBox(
-                    height: 250,
+                    height: 150,
                     width: 400,
                     child: PageView.builder(
                       itemCount: 5,
