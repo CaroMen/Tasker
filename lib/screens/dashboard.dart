@@ -88,26 +88,42 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 ),
               ],
             ),
-            Divider(),
             Column(
-              children: <Widget>[
-                SizedBox(
-                  child: PageView.builder(
-                    itemCount: 5,
-                    controller: PageController(viewportFraction: .55),
-                    onPageChanged: (int index) =>
-                        setState(() => _index = index),
-                    itemBuilder: (_, i) {
-                      return Transform.scale(
-                        scale: i == _index ? 1 : 0.9,
-                        child: Card(
-                          elevation: 6,
-                        ),
-                      );
-                    },
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 280.0, left: 40.0),
+                  child: Text(
+                    'Tasks',
+                    style: TextStyle(
+                      fontFamily: 'Barlow',
+                      fontSize: 25.0,
+                      color: Colors.black87,
+                      decoration: TextDecoration.none,
+                    ),
                   ),
                 ),
               ],
+            ),
+            Padding(
+              padding:
+                  const EdgeInsets.only(top: 300.0, left: 10.0, right: 10.0),
+              child: ListView.builder(
+                itemCount: 2,
+                scrollDirection: Axis.vertical,
+                itemBuilder: (context, index) {
+                  return new Card(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: <Widget>[
+                        ListTile(
+                          leading: const Icon(Icons.album),
+                          title: Text('Hello'),
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              ),
             ),
           ],
         );
