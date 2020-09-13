@@ -30,10 +30,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
         return Stack(
           children: <Widget>[
             new Container(
-              color: Color(0xFFE9EFEF),
+              color: Color(0xFFF4F6FD),
             ),
             new Container(
-              color: Color(0xFF5AB1C2), //blue section
+              color: Color(0xFFF4F6FD), //blue section
               height: MediaQuery.of(context).size.height / 2.93,
             ),
             Column(
@@ -43,13 +43,13 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   child: Align(
                     alignment: Alignment.centerLeft,
                     child: Container(
-                      padding: EdgeInsets.only(top: 80),
+                      padding: EdgeInsets.only(top: 80, left: 20),
                       child: Text(
-                        'Hello, ${user.name}',
+                        'Hello, ${user.name}!',
                         style: TextStyle(
                           fontFamily: 'Barlow',
                           fontSize: 30.0,
-                          color: Colors.white,
+                          color: Color(0xFF020417),
                           decoration: TextDecoration.none,
                         ),
                       ),
@@ -57,9 +57,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   ),
                 ),
                 Container(
-                  transform: Matrix4.translationValues(0.0, -80.0, 0.0),
+                  transform: Matrix4.translationValues(-50.0, -80.0, 0.0),
                   padding: EdgeInsets.only(top: 100),
-                  margin: EdgeInsets.only(left: 30),
+                  margin: EdgeInsets.only(left: 10),
                   child: Column(
                     children: [
                       SizedBox(
@@ -72,8 +72,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
                               setState(() => _index = index),
                           itemBuilder: (_, i) {
                             return Transform.scale(
-                              scale: i == _index ? 1 : 0.9,
+                              scale: i == _index ? 1 : 1,
                               child: Card(
+                                color: Color(0xFF0A155A),
                                 elevation: 6,
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(10),
@@ -91,13 +92,13 @@ class _DashboardScreenState extends State<DashboardScreen> {
             Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(top: 280.0, left: 40.0),
+                  padding: const EdgeInsets.only(top: 310.0, left: 40.0),
                   child: Text(
-                    'Tasks',
+                    'YOUR TASKS',
                     style: TextStyle(
                       fontFamily: 'Barlow',
-                      fontSize: 25.0,
-                      color: Colors.black87,
+                      fontSize: 15.0,
+                      color: Color(0XFF020417),
                       decoration: TextDecoration.none,
                     ),
                   ),
@@ -106,18 +107,33 @@ class _DashboardScreenState extends State<DashboardScreen> {
             ),
             Padding(
               padding:
-                  const EdgeInsets.only(top: 300.0, left: 10.0, right: 10.0),
+                  const EdgeInsets.only(top: 320.0, left: 40.0, right: 40.0),
               child: ListView.builder(
                 itemCount: 2,
                 scrollDirection: Axis.vertical,
                 itemBuilder: (context, index) {
                   return new Card(
+                    color: Color(0xFF0A155A),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: <Widget>[
                         ListTile(
-                          leading: const Icon(Icons.album),
-                          title: Text('Hello'),
+                          leading: Icon(
+                            Icons.radio_button_unchecked,
+                            color: Color(0xFFD103FC),
+                          ),
+                          title: Text(
+                            'Hello',
+                            style: TextStyle(
+                              fontFamily: 'Barlow',
+                              fontSize: 15.0,
+                              color: Colors.white,
+                              decoration: TextDecoration.none,
+                            ),
+                          ),
                         ),
                       ],
                     ),

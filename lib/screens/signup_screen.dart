@@ -25,7 +25,7 @@ class _SignupScreenState extends State<SignupScreen> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          color: Color(0xFFE9EFEF),
+          color: Color(0xFF7D80AA),
           height: MediaQuery.of(context).size.height,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -85,7 +85,7 @@ class _SignupScreenState extends State<SignupScreen> {
                       width: 250.0,
                       child: FlatButton(
                         onPressed: _submit,
-                        color: Color(0xFFBD747B),
+                        color: Color(0xFFD103FC),
                         padding: EdgeInsets.all(10.0),
                         child: Text(
                           'Sign Up',
@@ -100,7 +100,7 @@ class _SignupScreenState extends State<SignupScreen> {
                       width: 250.0,
                       child: FlatButton(
                         onPressed: () => Navigator.pop(context),
-                        color: Color(0xFFE9EFEF),
+                        color: Color(0xFFD103FC),
                         padding: EdgeInsets.all(10.0),
                         child: Text(
                           'Back to Log In',
