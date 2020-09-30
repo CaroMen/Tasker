@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:tasker/screens/dashboard.dart';
 import 'package:tasker/screens/login_screen.dart';
 import 'package:tasker/screens/signup_screen.dart';
+import 'package:tasker/screens/new_task.dart';
 
 void main() {
   runApp(MyApp());
@@ -33,6 +34,7 @@ class MyApp extends StatelessWidget {
         LoginScreen.id: (context) => LoginScreen(),
         SignupScreen.id: (context) => SignupScreen(),
         DashboardScreen.id: (context) => DashboardScreen(),
+        NewTask.id: (context) => NewTask(),
       },
     );
   }

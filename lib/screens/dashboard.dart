@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:tasker/models/user_model.dart';
 import 'package:tasker/services/auth_service.dart';
+import 'package:tasker/screens/new_task.dart';
 import 'package:tasker/utilities/constants.dart';
 
 class DashboardScreen extends StatefulWidget {
@@ -14,7 +15,11 @@ class DashboardScreen extends StatefulWidget {
 }
 
 class _DashboardScreenState extends State<DashboardScreen> {
-  int _index = 0;
+  final List<String> categoriesList = [
+    "Business",
+    "Personal",
+    "School",
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -71,14 +76,12 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                 height: 150,
                                 width: 400,
                                 child: PageView.builder(
-                                  itemCount: 5,
+                                  itemCount: categoriesList.length,
                                   controller:
                                       PageController(viewportFraction: 0.55),
-                                  onPageChanged: (int index) =>
-                                      setState(() => _index = index),
-                                  itemBuilder: (_, i) {
+                                  itemBuilder: (BuildContext context, int i) {
                                     return Transform.scale(
-                                      scale: i == _index ? 1 : 1,
+                                      scale: 1,
                                       child: Card(
                                         color: Color(0xFF0A155A),
                                         elevation: 6,
@@ -91,7 +94,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                           children: <Widget>[
                                             ListTile(
                                               title: Text(
-                                                'Personal',
+                                                (categoriesList[i]),
                                                 style: TextStyle(
                                                   fontFamily: 'Barlow',
                                                   fontSize: 25.0,
@@ -193,7 +196,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
           child: FittedBox(
             child: FloatingActionButton(
               onPressed: () {
-                // Add your onPressed code here!
+                Navigator.pushNamed(context, NewTask.id);
               },
               child: Icon(
                 Icons.add,
